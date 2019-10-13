@@ -22,7 +22,7 @@ WYTIWYG - What You Type Is [not] What You Get
 
 당신이 직접 연산하여 만들어낸 메시지에 동의하는가?
 
-![sketch01](images/sketch01.png)
+![sketch01](images/wytiwyg_sketch.png)
 
 
 ## license
