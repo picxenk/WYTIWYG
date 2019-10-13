@@ -5,7 +5,7 @@ WYTIWYG - What You Type Is [not] What You Get
 ![Y N keyboard](images/WYTIWYG_photo.png)
 
  * 변형된 키보드, 라즈베리파이, 열전사 프린터, 모니터
- * tweaked keyboard, raspberry pi, thermal printer, monitor
+ * tweaked keyboard, raspberry pi, thermal printer, monitor, p5js
 
 
 ## 작업설명
