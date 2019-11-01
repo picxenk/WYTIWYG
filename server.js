@@ -56,7 +56,7 @@ io.sockets.on('connection',
         
         // This is a way to send to everyone including sender
         io.sockets.emit('message', "printing");
-        exec('python printFontLine.py 20 \'010101\'', (err, stdout, stderr) => {
+        exec('python printFontLine.py '+data.fontSize+' \''+data.bits+'\'', (err, stdout, stderr) => {
           if (err) {
             //some err occurred
             console.error(err)
