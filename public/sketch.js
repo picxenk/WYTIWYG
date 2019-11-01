@@ -28,6 +28,7 @@ function setup() {
             isPrinting = true;
         } else {
             isPrinting = false;
+            fontGrid.reset();
         }
     });
 }
@@ -62,7 +63,6 @@ function keyPressed() {
         }
         if (gridIndex == 0) {
             socket.emit('print', fontGrid.printData());
-            fontGrid.reset();
         }
     }
 }

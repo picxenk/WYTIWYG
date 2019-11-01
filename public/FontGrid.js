@@ -31,9 +31,10 @@ class FontGrid {
     }
 
     printData() {
+        let copy = [...this.cells];
         let data = {
             fontSize: 20,
-            bits: this.cells.reverse().join("")
+            bits: copy.reverse().join("")
         };
         return data;
     }
