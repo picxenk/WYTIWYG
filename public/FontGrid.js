@@ -31,6 +31,9 @@ class FontGrid {
         return this.i;
     }
 
+    target(data) {
+    }
+
     printData() {
         let copy = [...this.cells];
         let data = {
