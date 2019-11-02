@@ -59,9 +59,6 @@ function draw() {
     if (state == "CHAR") {
         qBox.showPrinting();
     }
-    // if (isPrinting) background(200, 0, 0);
-    // else background(0);
-    //
 
     if (!isPrinting && printPool.length > 0) {
         let poolData = printPool.shift();
@@ -98,6 +95,7 @@ function processMessage() {
 }
 
 
+
 function keyPressed() {
     let gridIndex = -1;
     if (!isPrinting) {
@@ -126,89 +124,38 @@ function keyPressed() {
         }
 
         //for testing
-        if (key == 'G') {
-            let gap = fontLine(fontSize, '000000');
-            printPool.push(gap);
-        }
-
-        if (key == 'S') {
-            let gap = fontLine(fontSize, '000000');
-            printPool.push(gap);
-            printPool.push(gap);
-            printPool.push(gap);
-        }
-
         if (key == 'M') {
             state = "CHAR";
             aSize = 5;
-            //W
-            printPool.push(fontLine(aSize, '011111'));
-            printPool.push(fontLine(aSize, '100000'));
-            printPool.push(fontLine(aSize, '011000'));
-            printPool.push(fontLine(aSize, '100000'));
-            printPool.push(fontLine(aSize, '011111'));
-            printPool.push(fontLine(aSize, '000000'));
 
-            //E
-            printPool.push(fontLine(aSize, '111111'));
-            printPool.push(fontLine(aSize, '100101'));
-            printPool.push(fontLine(aSize, '100101'));
-            printPool.push(fontLine(aSize, '100101'));
-            printPool.push(fontLine(aSize, '000000'));
-
-            printPool.push(fontLine(aSize, '000000'));
-            printPool.push(fontLine(aSize, '000000'));
-            printPool.push(fontLine(aSize, '000000'));
-
-            //A
-            printPool.push(fontLine(aSize, '111110'));
-            printPool.push(fontLine(aSize, '001001'));
-            printPool.push(fontLine(aSize, '001001'));
-            printPool.push(fontLine(aSize, '111110'));
-            printPool.push(fontLine(aSize, '000000'));
-            
-            // //R
-            // printPool.push(fontLine(fontSize, '111111'));
-            // printPool.push(fontLine(fontSize, '000101'));
-            // printPool.push(fontLine(fontSize, '000101'));
-            // printPool.push(fontLine(fontSize, '111010'));
-            // printPool.push(fontLine(fontSize, '000000'));
-            //
-            // //E
-            // printPool.push(fontLine(fontSize, '111111'));
-            // printPool.push(fontLine(fontSize, '100101'));
-            // printPool.push(fontLine(fontSize, '100101'));
-            // printPool.push(fontLine(fontSize, '100101'));
-            // printPool.push(fontLine(fontSize, '000000'));
-            //
-            // printPool.push(fontLine(fontSize, '000000'));
-            // printPool.push(fontLine(fontSize, '000000'));
-            // printPool.push(fontLine(fontSize, '000000'));
-            //
-            // //C
-            // printPool.push(fontLine(fontSize, '011110'));
-            // printPool.push(fontLine(fontSize, '100001'));
-            // printPool.push(fontLine(fontSize, '100001'));
-            // printPool.push(fontLine(fontSize, '010010'));
-            // printPool.push(fontLine(fontSize, '000000'));
-            // //O
-            // printPool.push(fontLine(fontSize, '011110'));
-            // printPool.push(fontLine(fontSize, '100001'));
-            // printPool.push(fontLine(fontSize, '100001'));
-            // printPool.push(fontLine(fontSize, '011110'));
-            // printPool.push(fontLine(fontSize, '000000'));
-            // //O
-            // printPool.push(fontLine(fontSize, '011110'));
-            // printPool.push(fontLine(fontSize, '100001'));
-            // printPool.push(fontLine(fontSize, '100001'));
-            // printPool.push(fontLine(fontSize, '011110'));
-            // printPool.push(fontLine(fontSize, '000000'));
-            // //L
-            // printPool.push(fontLine(fontSize, '111111'));
-            // printPool.push(fontLine(fontSize, '100000'));
-            // printPool.push(fontLine(fontSize, '100000'));
-            // printPool.push(fontLine(fontSize, '100000'));
-            // printPool.push(fontLine(fontSize, '000000'));
+            pushChar(aSize, F.a);
+            pushChar(aSize, F.b);
+            pushChar(aSize, F.c);
+            pushChar(aSize, F.d);
+            pushChar(aSize, F.e);
+            pushChar(aSize, F.f);
+            pushChar(aSize, F.g);
+            pushChar(aSize, F.h);
+            pushChar(aSize, F.i);
+            pushChar(aSize, F.j);
+            pushChar(aSize, F.k);
+            pushChar(aSize, F.l);
+            pushChar(aSize, F.m);
+            pushChar(aSize, F.n);
+            pushChar(aSize, F.o);
+            pushChar(aSize, F.p);
+            pushChar(aSize, F.q);
+            pushChar(aSize, F.r);
+            pushChar(aSize, F.s);
+            pushChar(aSize, F.t);
+            pushChar(aSize, F.u);
+            pushChar(aSize, F.v);
+            pushChar(aSize, F.w);
+            pushChar(aSize, F.x);
+            pushChar(aSize, F.y);
+            pushChar(aSize, F.z);
+            pushChar(aSize, F.bang);
+            pushChar(aSize, F.quest);
         }
     }
 }
@@ -221,6 +168,14 @@ function fontLine(aSize, bits) {
     };
 }
 
+
 function pushLine(aSize, bits) {
             printPool.push(fontLine(aSize, bits));
+}
+
+
+function pushChar(aSize, aChar) {
+    for (let bits of aChar) {
+        pushLine(aSize, bits);
+    }
 }
