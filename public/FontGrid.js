@@ -39,7 +39,7 @@ class FontGrid {
             this.ci++;
 
             if (this.ci >= 5) {
-                this.ci = 0;
+                return -1;
             }
         }
         return this.i;
@@ -49,7 +49,7 @@ class FontGrid {
     }
 
     printData() {
-        let i = max(this.ci - 1, 0);
+        let i = this.ci - 1;
         let line = this.cells[i];
         let copy = [...line];
         console.log("DEBUG");

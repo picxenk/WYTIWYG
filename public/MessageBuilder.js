@@ -24,6 +24,16 @@ class MessageBuilder {
                 value: 'C',
                 data: []
             },
+            {
+                type: 'char',
+                value: 'SPACE',
+                data: F.space
+            },
+            {
+                type: 'char',
+                value: 'E',
+                data: F.e
+            },
         ];
         return msg;
     }

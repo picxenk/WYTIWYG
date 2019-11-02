@@ -70,7 +70,7 @@ function draw() {
         state = "READY";
     }
 
-    if (printPool.length == 0 && cMessage.length > 0) {
+    if (printPool.length == 0 && cMessage.length > 0 && state != "LINE") {
         processMessage();
     }
 }
@@ -110,17 +110,24 @@ function keyPressed() {
             fontGrid.reset();
         }
 
-        if (key == 'Y' || key == 'y') {
-            fontGrid.setOn();
-            gridIndex = fontGrid.next();
-        }
-        if (key == 'N' || key == 'n') {
-            fontGrid.setOff();
-            gridIndex = fontGrid.next();
-        }
-        if (gridIndex == 0) {
-            // socket.emit('print', fontGrid.printData());
-            printPool.push(fontGrid.printData());
+        if (state == "LINE") {
+            if (key == 'Y' || key == 'y') {
+                fontGrid.setOn();
+                gridIndex = fontGrid.next();
+            }
+            if (key == 'N' || key == 'n') {
+                fontGrid.setOff();
+                gridIndex = fontGrid.next();
+            }
+            if (gridIndex == 0) {
+                // socket.emit('print', fontGrid.printData());
+                printPool.push(fontGrid.printData());
+            }
+            if (gridIndex == -1) {
+                printPool.push(fontGrid.printData());
+                fontGrid.reset();
+                processMessage();
+            }
         }
 
         //for testing
