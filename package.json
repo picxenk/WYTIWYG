@@ -4,7 +4,8 @@
   "description": "What You Type Is [not] What You Get",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "author": "Seungbum Kim",
   "license": "Artistic License 2.0",
