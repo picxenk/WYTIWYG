@@ -9,11 +9,11 @@ class MessageBuilder {
                 value: 'W',
                 data: F.w
             },
-            {
-                type: 'char',
-                value: 'E',
-                data: F.e
-            },
+            // {
+            //     type: 'char',
+            //     value: 'E',
+            //     data: F.e
+            // },
             {
                 type: 'char',
                 value: 'SPACE',

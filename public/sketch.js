@@ -36,7 +36,7 @@ function setup() {
             isPrinting = true;
         } else {
             isPrinting = false;
-            fontGrid.reset();
+            // fontGrid.reset();
         }
     });
 
@@ -128,34 +128,34 @@ function keyPressed() {
             state = "CHAR";
             aSize = 5;
 
-            pushChar(aSize, F.a);
-            pushChar(aSize, F.b);
-            pushChar(aSize, F.c);
-            pushChar(aSize, F.d);
-            pushChar(aSize, F.e);
+            // pushChar(aSize, F.a);
+            // pushChar(aSize, F.b);
+            // pushChar(aSize, F.c);
+            // pushChar(aSize, F.d);
+            // pushChar(aSize, F.e);
             pushChar(aSize, F.f);
             pushChar(aSize, F.g);
-            pushChar(aSize, F.h);
-            pushChar(aSize, F.i);
-            pushChar(aSize, F.j);
-            pushChar(aSize, F.k);
-            pushChar(aSize, F.l);
-            pushChar(aSize, F.m);
-            pushChar(aSize, F.n);
-            pushChar(aSize, F.o);
-            pushChar(aSize, F.p);
-            pushChar(aSize, F.q);
+            // pushChar(aSize, F.h);
+            // pushChar(aSize, F.i);
+            // pushChar(aSize, F.j);
+            // pushChar(aSize, F.k);
+            // pushChar(aSize, F.l);
+            // pushChar(aSize, F.m);
+            // pushChar(aSize, F.n);
+            // pushChar(aSize, F.o);
+            // pushChar(aSize, F.p);
+            // pushChar(aSize, F.q);
             pushChar(aSize, F.r);
             pushChar(aSize, F.s);
-            pushChar(aSize, F.t);
-            pushChar(aSize, F.u);
-            pushChar(aSize, F.v);
-            pushChar(aSize, F.w);
-            pushChar(aSize, F.x);
-            pushChar(aSize, F.y);
-            pushChar(aSize, F.z);
-            pushChar(aSize, F.bang);
-            pushChar(aSize, F.quest);
+            // pushChar(aSize, F.t);
+            // pushChar(aSize, F.u);
+            // pushChar(aSize, F.v);
+            // pushChar(aSize, F.w);
+            // pushChar(aSize, F.x);
+            // pushChar(aSize, F.y);
+            // pushChar(aSize, F.z);
+            // pushChar(aSize, F.bang);
+            // pushChar(aSize, F.quest);
         }
     }
 }
