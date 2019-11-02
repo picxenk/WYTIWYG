@@ -1,5 +1,7 @@
 let socket;
 let isPrinting = false;
+let printPool = [];
+let fontSize = 20;
 
 let qBox, fontGrid;
 let cellSize = 40;
@@ -22,6 +24,7 @@ function setup() {
     let gridTop = (displayHeight - (qBox.h+margin) - (6*cellSize))/2 + (qBox.y + qBox.h);
     fontGrid = new FontGrid(margin, gridTop);
     fontGrid.w = cellSize;
+    fontGrid.fontSize = fontSize;
 
     socket.on('message', (data) => {
         if (data == "printing") {
@@ -41,6 +44,13 @@ function draw() {
     fontGrid.show();
     // if (isPrinting) background(200, 0, 0);
     // else background(0);
+    //
+
+    if (!isPrinting && printPool.length > 0) {
+        let poolData = printPool.shift();
+        socket.emit('print', poolData);
+        console.log("PRINTING::"+poolData.fontSize+"::"+poolData.bits);
+    }
 }
 
 
@@ -48,8 +58,9 @@ function keyPressed() {
     let gridIndex = -1;
     if (!isPrinting) {
         if (key == ' ') {
-            let data = {fontSize:20, bits:'101101'};
-            socket.emit('print', data);
+            let data = fontLine(20, '101101');
+            printPool.push(data);
+            // socket.emit('print', data);
             fontGrid.reset();
         }
 
@@ -62,9 +73,105 @@ function keyPressed() {
             gridIndex = fontGrid.next();
         }
         if (gridIndex == 0) {
-            socket.emit('print', fontGrid.printData());
+            // socket.emit('print', fontGrid.printData());
+            printPool.push(fontGrid.printData());
+        }
+
+        //for testing
+        if (key == 'G') {
+            let gap = fontLine(fontSize, '000000');
+            printPool.push(gap);
+        }
+
+        if (key == 'S') {
+            let gap = fontLine(fontSize, '000000');
+            printPool.push(gap);
+            printPool.push(gap);
+            printPool.push(gap);
+        }
+
+        if (key == 'M') {
+            fontSize = 30;
+            //W
+            printPool.push(fontLine(fontSize, '011111'));
+            printPool.push(fontLine(fontSize, '100000'));
+            printPool.push(fontLine(fontSize, '011000'));
+            printPool.push(fontLine(fontSize, '100000'));
+            printPool.push(fontLine(fontSize, '011111'));
+            printPool.push(fontLine(fontSize, '000000'));
+
+            //E
+            printPool.push(fontLine(fontSize, '111111'));
+            printPool.push(fontLine(fontSize, '100101'));
+            printPool.push(fontLine(fontSize, '100101'));
+            printPool.push(fontLine(fontSize, '100101'));
+            printPool.push(fontLine(fontSize, '000000'));
+
+            printPool.push(fontLine(fontSize, '000000'));
+            printPool.push(fontLine(fontSize, '000000'));
+            printPool.push(fontLine(fontSize, '000000'));
+
+            //A
+            printPool.push(fontLine(fontSize, '111110'));
+            printPool.push(fontLine(fontSize, '001001'));
+            printPool.push(fontLine(fontSize, '001001'));
+            printPool.push(fontLine(fontSize, '111110'));
+            printPool.push(fontLine(fontSize, '000000'));
+            
+            //R
+            printPool.push(fontLine(fontSize, '111111'));
+            printPool.push(fontLine(fontSize, '000101'));
+            printPool.push(fontLine(fontSize, '000101'));
+            printPool.push(fontLine(fontSize, '111010'));
+            printPool.push(fontLine(fontSize, '000000'));
+
+            //E
+            printPool.push(fontLine(fontSize, '111111'));
+            printPool.push(fontLine(fontSize, '100101'));
+            printPool.push(fontLine(fontSize, '100101'));
+            printPool.push(fontLine(fontSize, '100101'));
+            printPool.push(fontLine(fontSize, '000000'));
+
+            printPool.push(fontLine(fontSize, '000000'));
+            printPool.push(fontLine(fontSize, '000000'));
+            printPool.push(fontLine(fontSize, '000000'));
+            
+            //C
+            printPool.push(fontLine(fontSize, '011110'));
+            printPool.push(fontLine(fontSize, '100001'));
+            printPool.push(fontLine(fontSize, '100001'));
+            printPool.push(fontLine(fontSize, '010010'));
+            printPool.push(fontLine(fontSize, '000000'));
+            //O
+            printPool.push(fontLine(fontSize, '011110'));
+            printPool.push(fontLine(fontSize, '100001'));
+            printPool.push(fontLine(fontSize, '100001'));
+            printPool.push(fontLine(fontSize, '011110'));
+            printPool.push(fontLine(fontSize, '000000'));
+            //O
+            printPool.push(fontLine(fontSize, '011110'));
+            printPool.push(fontLine(fontSize, '100001'));
+            printPool.push(fontLine(fontSize, '100001'));
+            printPool.push(fontLine(fontSize, '011110'));
+            printPool.push(fontLine(fontSize, '000000'));
+            //L
+            printPool.push(fontLine(fontSize, '111111'));
+            printPool.push(fontLine(fontSize, '100000'));
+            printPool.push(fontLine(fontSize, '100000'));
+            printPool.push(fontLine(fontSize, '100000'));
+            printPool.push(fontLine(fontSize, '000000'));
         }
     }
 }
 
 
+function fontLine(aSize, bits) {
+    return {
+        fontSize: aSize,
+        bits: bits
+    };
+}
+
+function pushLine(aSize, bits) {
+            printPool.push(fontLine(fontSize, '000000'));
+}

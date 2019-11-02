@@ -5,6 +5,7 @@ class FontGrid {
         this.w = 30;
         this.cells = [2, 2, 2, 2, 2, 2];
         this.i = 0;
+        this.fontSize = 20;
     }
 
     reset() {
@@ -33,7 +34,7 @@ class FontGrid {
     printData() {
         let copy = [...this.cells];
         let data = {
-            fontSize: 20,
+            fontSize: this.fontSize,
             bits: copy.reverse().join("")
         };
         return data;
