@@ -8,6 +8,8 @@ let cellSize = 40;
 
 let margin = 20;
 
+let state;
+
 function setup() {
     let dWidth = displayHeight/16*9;
     createCanvas(dWidth, displayHeight);
@@ -34,14 +36,26 @@ function setup() {
             fontGrid.reset();
         }
     });
+
+    state = "READY";
 }
 
 
 function draw() {
     background(255);
 
-    qBox.show();
-    fontGrid.show();
+    if (state == "READY") {
+        qBox.showReady();
+    }
+
+    if (state == "LINE") {
+        qBox.show();
+        fontGrid.show();
+    }
+
+    if (state == "CHAR") {
+        qBox.showPrinting();
+    }
     // if (isPrinting) background(200, 0, 0);
     // else background(0);
     //
@@ -50,6 +64,10 @@ function draw() {
         let poolData = printPool.shift();
         socket.emit('print', poolData);
         console.log("PRINTING::"+poolData.fontSize+"::"+poolData.bits);
+    }
+
+    if (printPool.length == 0) {
+        state = "READY";
     }
 }
 
@@ -91,7 +109,8 @@ function keyPressed() {
         }
 
         if (key == 'M') {
-            fontSize = 30;
+            state = "CHAR";
+            fontSize = 5;
             //W
             printPool.push(fontLine(fontSize, '011111'));
             printPool.push(fontLine(fontSize, '100000'));

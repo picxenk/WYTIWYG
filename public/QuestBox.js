@@ -21,11 +21,32 @@ class QuestBox {
         text("Do you like a cat?", width/2, 100+50);
     }
 
-
-    show() {
+    showBox() {
         fill(0);
         rect(this.x, this.y, this.w, this.h, this.r);
+    }
 
+    showReady() {
+        this.showBox();
+        noStroke();
+        fill(200);
+        textAlign(CENTER);
+        textSize(30);
+        text("What You Type Is [not] What You Get", width/2, 100);
+    }
+
+
+    show() {
+        this.showBox();
         this.showQuestion(0);
+    }
+
+    showPrinting() {
+        this.showBox();
+        noStroke();
+        fill(200);
+        textAlign(CENTER);
+        textSize(40);
+        text("PRINTING...", width/2, 100);
     }
 }
