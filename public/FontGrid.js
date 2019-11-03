@@ -73,6 +73,15 @@ class FontGrid {
         return data;
     }
 
+    cPos() {
+        let pos = {
+            x: this.x+(this.ci*this.w)+this.w/2,
+            y: this.y+(this.i*this.w)+this.w/2
+        }
+        return pos;
+
+    }
+
     show() {
         for (let j=0; j<5; j++) {
             for (let i=0; i<6; i++) {

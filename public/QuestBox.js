@@ -83,6 +83,7 @@ class QuestBox {
     }
 
     showBox() {
+        noStroke();
         fill(0);
         rect(this.x, this.y, this.w, this.h, this.r);
     }
@@ -135,6 +136,15 @@ class QuestBox {
         textFont(this.tFont);
         textSize(ts);
         text("Y / N", ynX, ynY);
+    }
+
+    pointTo(aPos) {
+        noStroke();
+        fill(0);
+        let topX = this.w/9*7;
+        let topY = this.y + this.h;
+        let g = this.w/7;
+        triangle(topX, topY, topX+g, topY, aPos.x, aPos.y);
     }
 
 

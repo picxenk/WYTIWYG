@@ -37,7 +37,7 @@ function setup() {
     qBox.tFont = titleFont;
     qBox.qFont = questFont;
 
-    cellSize = dHeight/22;
+    cellSize = dHeight/24;
     let gridTop = (dHeight - (qBox.h+margin) - (6*cellSize))/2 + (qBox.y + qBox.h);
     let gridX = width/2 - (cellSize*2.5);
     fontGrid = new FontGrid(gridX, gridTop);
@@ -69,6 +69,7 @@ function draw() {
         // console.log(fontGrid.get());
         qBox.show();
         fontGrid.show();
+        qBox.pointTo(fontGrid.cPos());
     }
 
     if (state == "CHAR" || isPrinting) {
