@@ -12,6 +12,13 @@ let state;
 let cMessage = [];
 let messageBuilder;
 
+let titleFont, questFont;
+
+function preload() {
+    titleFont = loadFont("NanumBarunGothicBold.otf");
+    questFont = loadFont("NanumBarunGothic.otf");
+}
+
 function setup() {
     let dWidth = displayHeight/16*9;
     createCanvas(dWidth, displayHeight);
@@ -25,6 +32,8 @@ function setup() {
     qBox = new QuestBox(margin, margin);
     qBox.w = (dWidth - (margin*2));
     qBox.h = displayHeight/5*3;
+    qBox.tFont = titleFont;
+    qBox.qFont = questFont;
 
     let gridTop = (displayHeight - (qBox.h+margin) - (6*cellSize))/2 + (qBox.y + qBox.h);
     fontGrid = new FontGrid(margin, gridTop);
@@ -57,7 +66,7 @@ function draw() {
         fontGrid.show();
     }
 
-    if (state == "CHAR") {
+    if (state == "CHAR" || isPrinting) {
         qBox.showPrinting();
     }
 
