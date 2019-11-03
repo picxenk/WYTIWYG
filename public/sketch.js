@@ -5,7 +5,6 @@ let fontSize = 10;
 
 let qBox, fontGrid;
 let cellSize = 40;
-
 let margin = 20;
 
 let state;
@@ -20,8 +19,10 @@ function preload() {
 }
 
 function setup() {
-    let dWidth = displayHeight/16*9;
-    createCanvas(dWidth, displayHeight);
+    // let dHeight = displayHeight;
+    let dHeight = 800;
+    let dWidth = dHeight/16*9;
+    createCanvas(dWidth, dHeight);
     background(255);
     noCursor();
     frameRate(10);
@@ -29,14 +30,17 @@ function setup() {
 
     messageBuilder = new MessageBuilder();
 
+    margin = floor(dWidth/30);
     qBox = new QuestBox(margin, margin);
     qBox.w = (dWidth - (margin*2));
-    qBox.h = displayHeight/5*3;
+    qBox.h = dHeight/6*4;
     qBox.tFont = titleFont;
     qBox.qFont = questFont;
 
-    let gridTop = (displayHeight - (qBox.h+margin) - (6*cellSize))/2 + (qBox.y + qBox.h);
-    fontGrid = new FontGrid(margin, gridTop);
+    cellSize = dHeight/22;
+    let gridTop = (dHeight - (qBox.h+margin) - (6*cellSize))/2 + (qBox.y + qBox.h);
+    let gridX = width/2 - (cellSize*2.5);
+    fontGrid = new FontGrid(gridX, gridTop);
     fontGrid.w = cellSize;
     fontGrid.fontSize = fontSize;
 
@@ -58,6 +62,7 @@ function draw() {
 
     if (state == "READY") {
         qBox.showReady();
+        fontGrid.show();
     }
 
     if (state == "LINE") {

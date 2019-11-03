@@ -4,7 +4,7 @@ class QuestBox {
         this.y = aY;
         this.w = 100;
         this.h = 100;
-        this.r = 5;
+        this.r = aX/2; // margin 
         this.questKo = '';
         this.questEn = '';
         this.tFont;
