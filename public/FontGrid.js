@@ -48,10 +48,14 @@ class FontGrid {
     }
 
     get() {
-        if (this.ch.length > 0 && this.ch[0].length == 6)
-            return this.ch[this.ci][5-this.i];
-        else
+        try {
+            if (this.ch.length > 0 && this.ch[0].length == 6)
+                return this.ch[this.ci][5-this.i];
+            else
+                return -1;
+        } catch(e) {
             return -1;
+        }
     }
 
     printData() {

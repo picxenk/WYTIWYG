@@ -92,6 +92,7 @@ function processMessage() {
         state = "LINE";
         console.log("FontGrid for: "+c.value);
         fontGrid.target(c.data);
+        qBox.nextQuest(fontGrid.get());
     }
 }
 
@@ -115,10 +116,12 @@ function keyPressed() {
             if (key == 'Y' || key == 'y') {
                 fontGrid.setOn();
                 gridIndex = fontGrid.next();
+                qBox.nextQuest(fontGrid.get());
             }
             if (key == 'N' || key == 'n') {
                 fontGrid.setOff();
                 gridIndex = fontGrid.next();
+                qBox.nextQuest(fontGrid.get());
             }
             if (gridIndex == 0) {
                 // socket.emit('print', fontGrid.printData());
