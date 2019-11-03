@@ -52,6 +52,7 @@ function draw() {
     }
 
     if (state == "LINE") {
+        // console.log(fontGrid.get());
         qBox.show();
         fontGrid.show();
     }
@@ -125,6 +126,7 @@ function keyPressed() {
             }
             if (gridIndex == -1) {
                 printPool.push(fontGrid.printData());
+                pushLine(fontSize, "000000");
                 fontGrid.reset();
                 processMessage();
             }
@@ -133,15 +135,28 @@ function keyPressed() {
         //for testing
         if (key == 'M') {
             state = "CHAR";
-            aSize = 5;
+            aSize = 10;
 
+            pushChar(aSize, F.g);
+            pushChar(aSize, F.o);
+            pushChar(aSize, F.o);
+            pushChar(aSize, F.d);
+            pushChar(aSize, F.space);
+            pushChar(aSize, F.l);
+            pushChar(aSize, F.u);
+            pushChar(aSize, F.c);
+            pushChar(aSize, F.k);
+            pushChar(aSize, F.bang);
+            pushChar(aSize, F.space);
+            pushChar(aSize, F.space);
+            
             // pushChar(aSize, F.a);
             // pushChar(aSize, F.b);
             // pushChar(aSize, F.c);
             // pushChar(aSize, F.d);
             // pushChar(aSize, F.e);
-            pushChar(aSize, F.f);
-            pushChar(aSize, F.g);
+            // pushChar(aSize, F.f);
+            // pushChar(aSize, F.g);
             // pushChar(aSize, F.h);
             // pushChar(aSize, F.i);
             // pushChar(aSize, F.j);
@@ -152,8 +167,8 @@ function keyPressed() {
             // pushChar(aSize, F.o);
             // pushChar(aSize, F.p);
             // pushChar(aSize, F.q);
-            pushChar(aSize, F.r);
-            pushChar(aSize, F.s);
+            // pushChar(aSize, F.r);
+            // pushChar(aSize, F.s);
             // pushChar(aSize, F.t);
             // pushChar(aSize, F.u);
             // pushChar(aSize, F.v);

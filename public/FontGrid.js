@@ -4,13 +4,11 @@ class FontGrid {
         this.y = aY;
         this.w = 30;
         this.reset();
-        // this.cells = [2, 2, 2, 2, 2, 2];
-        // this.i = 0;
-        // this.ci = 0;
         this.fontSize = 20;
     }
 
     reset() {
+        this.ch = [];
         this.cells = [
             [2, 2, 2, 2, 2, 2],
             [2, 2, 2, 2, 2, 2],
@@ -46,16 +44,24 @@ class FontGrid {
     }
 
     target(data) {
+        this.ch = data;
+    }
+
+    get() {
+        if (this.ch.length > 0 && this.ch[0].length == 6)
+            return this.ch[this.ci][5-this.i];
+        else
+            return -1;
     }
 
     printData() {
         let i = this.ci - 1;
         let line = this.cells[i];
         let copy = [...line];
-        console.log("DEBUG");
-        console.log(this.cells);
-        console.log(this.ci);
-        console.log(copy);
+        // console.log("DEBUG");
+        // console.log(this.cells);
+        // console.log(this.ci);
+        // console.log(copy);
         let data = {
             fontSize: this.fontSize,
             bits: copy.reverse().join("")
