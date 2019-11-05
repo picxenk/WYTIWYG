@@ -1,4 +1,4 @@
-let isDebug = false;
+let isDebug = true;
 let socket;
 let isPrinting = false;
 let printPool = [];
@@ -129,7 +129,8 @@ function keyPressed() {
     if (!isPrinting) {
         if (state == "READY" && (key == 'Y' || key == 'y')) {
             cMessage = messageBuilder.next();
-            fontSize = [10, 10, 20, 10, 20, 10, 30][floor(random(7))];
+            // fontSize = [10, 10, 20, 10, 20, 10, 30][floor(random(7))];
+            fontSize = [5, 5, 5][floor(random(3))];
             fontGrid.fontSize = fontSize;
         }
         if (state == "READY" && (key == 'N' || key == 'n')) {
@@ -141,6 +142,7 @@ function keyPressed() {
             printPool.push(data);
             // socket.emit('print', data);
             fontGrid.reset();
+            console.log("STATE: "+state);
         }
 
         if (state == "LINE") {

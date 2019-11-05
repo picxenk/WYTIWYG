@@ -22,12 +22,12 @@ class FontGrid {
 
     setOn() {
         this.cells[this.ci][this.i] = 1;
-        console.log(this.cells);
+        // console.log(this.cells);
     }
 
     setOff() {
         this.cells[this.ci][this.i] = 0;
-        console.log(this.cells);
+        // console.log(this.cells);
     }
 
     next() {

@@ -1,5 +1,8 @@
 class MessageBuilder {
     constructor() {
+        this.messages = [];
+    }
+    resetMsgs() {
         this.messages = [
             // for testing
             // [{type: 'char', value: 'W', data: F.w},
@@ -61,9 +64,10 @@ class MessageBuilder {
     }
 
     next() {
+        if (this.messages.length == 0) this.resetMsgs();
         let num = this.messages.length;
         let i = floor(random(0, num));
-        let msg = this.messages[i];
+        let msg = [...this.messages[i]];
         return msg;
     }
 
