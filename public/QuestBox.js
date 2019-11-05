@@ -8,6 +8,7 @@ class QuestBox {
         this.questKo = '';
         this.questEn = '';
         this.tFont;
+        this.please = false;
         this.quests0 = [
             // {type: 'm', ko: "" , en: ""},
             // {type: 'c', ko: "" , en: ""},
@@ -140,6 +141,12 @@ class QuestBox {
         y = y + ts + g;
         textSize(ts);
         text("message together", width/2, y);
+
+        if (this.please) {
+            y = y + ts + ts + g;
+            textSize(ts);
+            text("PLEASE ~", width/2, y);
+        }
 
         this.showYN();
     }

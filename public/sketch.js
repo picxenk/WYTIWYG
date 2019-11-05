@@ -1,3 +1,4 @@
+let isDebug = false;
 let socket;
 let isPrinting = false;
 let printPool = [];
@@ -116,6 +117,7 @@ function processMessage() {
     }
 
     if (c.type == 'end') {
+        qBox.please = false;
         printFeed(4);
     }
 }
@@ -128,8 +130,11 @@ function keyPressed() {
         if (state == "READY" && (key == 'Y' || key == 'y')) {
             cMessage = messageBuilder.next();
         }
+        if (state == "READY" && (key == 'N' || key == 'n')) {
+            qBox.please = true;
+        }
 
-        if (key == ' ') {
+        if (isDebug && key == ' ') {
             let data = fontLine(20, '101101');
             printPool.push(data);
             // socket.emit('print', data);
@@ -160,7 +165,7 @@ function keyPressed() {
         }
 
         //for testing
-        if (key == 'M') {
+        if (isDebug && key == 'M') {
             state = "CHAR";
             aSize = 10;
 
