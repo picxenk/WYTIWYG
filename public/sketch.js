@@ -26,7 +26,7 @@ function setup() {
     createCanvas(dWidth, dHeight);
     background(255);
     noCursor();
-    frameRate(10);
+    frameRate(5);
     socket = io.connect('http://localhost:8080');
 
     messageBuilder = new MessageBuilder();
