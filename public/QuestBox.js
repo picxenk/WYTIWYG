@@ -27,7 +27,7 @@ class QuestBox {
             {type: 'm', ko: "1 더하기 1 은 2 ?" , en: "1 plus 1 is 2?"},
             {type: 'c', ko: "고양이를 좋아하는가?" , en: "Do you like a cat?"},
             {type: 'p', ko: "정의는 실현가능한가?" , en: "Is justice possible?"},
-            {type: 'm', ko: "7은 홀수인가?" , en: "Is 9 odd?"},
+            {type: 'm', ko: "7은 홀수인가?" , en: "Is 7 odd?"},
             {type: 'c', ko: "김치를 아는가?" , en: "Do you know kimchi?"},
             {type: 'c', ko: "인간은 달에 착륙했는가?" , en: "Did humans land on the moon?"},
         ];
@@ -47,6 +47,9 @@ class QuestBox {
             {type: 'p', ko: "정의는 실현가능한가?" , en: "Is justice possible?"},
             {type: 'c', ko: "고양이를 좋아하는가?" , en: "Do you like a cat?"},
             {type: 'c', ko: "개를 좋아하는가?" , en: "Do you like a dog?"},
+            {type: 'c', ko: "개구리를 좋아하는가?" , en: "Do you like a frog?"},
+            {type: 'c', ko: "거미를 좋아하는가?" , en: "Do you like a spider?"},
+            {type: 'm', ko: "E = mc^2?" , en: "E = mc^2?"},
         ];
     }
 
