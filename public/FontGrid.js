@@ -91,7 +91,7 @@ class FontGrid {
                 if (this.cells[j][i] == 1)
                     fill(0);
                 else if (this.cells[j][i] == 0)
-                    fill(255);
+                    fill(220);
                 else 
                     fill(90);
 

@@ -1,4 +1,4 @@
-let isDebug = true;
+let isDebug = false;
 let socket;
 let isPrinting = false;
 let printPool = [];
@@ -20,8 +20,8 @@ function preload() {
 }
 
 function setup() {
-    // let dHeight = displayHeight;
-    let dHeight = 800;
+    let dHeight = displayHeight;
+    // let dHeight = 800;
     let dWidth = dHeight/16*9;
     createCanvas(dWidth, dHeight);
     background(255);
@@ -129,8 +129,8 @@ function keyPressed() {
     if (!isPrinting) {
         if (state == "READY" && (key == 'Y' || key == 'y')) {
             cMessage = messageBuilder.next();
-            // fontSize = [10, 10, 20, 10, 20, 10, 30][floor(random(7))];
-            fontSize = [5, 5, 5][floor(random(3))];
+            fontSize = [10, 10, 20, 10, 20, 10, 30][floor(random(7))];
+            // fontSize = [5, 5, 5][floor(random(3))];
             fontGrid.fontSize = fontSize;
         }
         if (state == "READY" && (key == 'N' || key == 'n')) {
