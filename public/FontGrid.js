@@ -99,4 +99,24 @@ class FontGrid {
             }
         }
     }
+
+    showChar() {
+        if (this.ch.length > 5) {
+        for (let j=0; j<5; j++) {
+            for (let i=0; i<6; i++) {
+                stroke(255);
+                strokeWeight(4);
+
+                if (this.ch[j][5-i] == 1)
+                    fill(0);
+                else if (this.ch[j][5-i] == 0)
+                    fill(200);
+                else 
+                    fill(90);
+
+                rect(this.x+(j*this.w), this.y+(i*this.w), this.w, this.w);
+            }
+        }
+        }
+    }
 }

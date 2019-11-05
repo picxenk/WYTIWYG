@@ -76,6 +76,10 @@ function draw() {
         qBox.showPrinting();
     }
 
+    if (state == "CHAR") {
+        fontGrid.showChar();
+    }
+
     if (!isPrinting && printPool.length > 0) {
         let poolData = printPool.shift();
         socket.emit('print', poolData);
@@ -98,6 +102,7 @@ function processMessage() {
     if (c.type == 'char') {
         state = "CHAR";
         console.log("PROCESSING: "+c.value);
+        fontGrid.target(c.data);
         for (let bits of c.data) {
             pushLine(fontSize, bits);
         }
