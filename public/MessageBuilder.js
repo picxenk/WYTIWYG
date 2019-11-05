@@ -2,13 +2,13 @@ class MessageBuilder {
     constructor() {
         this.messages = [
             // for testing
-            [{type: 'char', value: 'W', data: F.w},
-            {type: 'char', value: '_', data: F.space},
-            {type: 'line', value: 'C', data: F.ct},
-            {type: 'line', value: 'O', data: F.o},
-            {type: 'char', value: 'L', data: F.l},
-            {type: 'char', value: '_', data: F.space},
-            {type: 'end'}],
+            // [{type: 'char', value: 'W', data: F.w},
+            // {type: 'char', value: '_', data: F.space},
+            // {type: 'line', value: 'C', data: F.ct},
+            // {type: 'line', value: 'O', data: F.o},
+            // {type: 'char', value: 'L', data: F.l},
+            // {type: 'char', value: '_', data: F.space},
+            // {type: 'end'}],
 
             // WE ARE COOL
             [{type: 'char', value: 'W', data: F.w},

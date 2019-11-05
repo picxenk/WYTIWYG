@@ -129,6 +129,8 @@ function keyPressed() {
     if (!isPrinting) {
         if (state == "READY" && (key == 'Y' || key == 'y')) {
             cMessage = messageBuilder.next();
+            fontSize = [10, 10, 20, 10, 20, 10, 30][floor(random(7))];
+            fontGrid.fontSize = fontSize;
         }
         if (state == "READY" && (key == 'N' || key == 'n')) {
             qBox.please = true;
