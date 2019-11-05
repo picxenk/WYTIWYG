@@ -7,7 +7,8 @@ class MessageBuilder {
             {type: 'line', value: 'C', data: F.ct},
             {type: 'line', value: 'O', data: F.o},
             {type: 'char', value: 'L', data: F.l},
-            {type: 'char', value: '_', data: F.space}],
+            {type: 'char', value: '_', data: F.space},
+            {type: 'end'}],
 
             // WE ARE COOL
             [{type: 'char', value: 'W', data: F.w},
@@ -21,7 +22,8 @@ class MessageBuilder {
             {type: 'line', value: 'O', data: F.o},
             {type: 'char', value: 'O', data: F.o},
             {type: 'char', value: 'L', data: F.l},
-            {type: 'char', value: '_', data: F.space}],
+            {type: 'char', value: '_', data: F.space},
+            {type: 'end'}],
 
             // WORLD IS FLAT
             [{type: 'char', value: 'W', data: F.w},
@@ -37,7 +39,8 @@ class MessageBuilder {
             {type: 'line', value: 'L', data: F.lo},
             {type: 'char', value: 'A', data: F.a},
             {type: 'char', value: 'T', data: F.t},
-            {type: 'char', value: '_', data: F.space}],
+            {type: 'char', value: '_', data: F.space},
+            {type: 'end'}],
 
             // NOW AND HERE
             [{type: 'char', value: 'N', data: F.n},
@@ -52,7 +55,8 @@ class MessageBuilder {
             {type: 'char', value: 'E', data: F.e},
             {type: 'char', value: 'R', data: F.r},
             {type: 'line', value: 'E', data: F.eo},
-            {type: 'char', value: '_', data: F.space}],
+            {type: 'char', value: '_', data: F.space},
+            {type: 'end'}],
         ];
     }
 

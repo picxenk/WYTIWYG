@@ -70,6 +70,19 @@ io.sockets.on('connection',
 
       }
     );
+
+    socket.on('feed',
+        function(data) {
+            io.sockets.emit('message', "printing");
+            exec('python printFeed.py '+data.feedSize, (err, stdout, stderr) => {
+              if (err) {
+                console.error(err)
+              } else {
+                io.sockets.emit('message', "done");
+              }
+            });
+        }
+    );
     
     socket.on('disconnect', function() {
       console.log("Client has disconnected");

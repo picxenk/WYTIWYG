@@ -109,6 +109,10 @@ function processMessage() {
         fontGrid.target(c.data);
         qBox.nextQuest(fontGrid.get());
     }
+
+    if (c.type == 'end') {
+        printFeed(4);
+    }
 }
 
 
@@ -210,7 +214,11 @@ function fontLine(aSize, bits) {
 
 
 function pushLine(aSize, bits) {
-            printPool.push(fontLine(aSize, bits));
+    printPool.push(fontLine(aSize, bits));
+}
+
+function printFeed(aSize) {
+    socket.emit('feed', {feedSize: aSize});
 }
 
 
