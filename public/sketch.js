@@ -69,7 +69,7 @@ function draw() {
         // console.log(fontGrid.get());
         qBox.show();
         fontGrid.show();
-        qBox.pointTo(fontGrid.cPos());
+        if (!isPrinting) qBox.pointTo(fontGrid.cPos());
     }
 
     if (state == "CHAR" || isPrinting) {

@@ -158,7 +158,7 @@ class QuestBox {
         noStroke();
         fill(0);
         let topX = this.w/9*7;
-        let topY = this.y + this.h;
+        let topY = this.y + this.h-2;
         let g = this.w/7;
         triangle(topX, topY, topX+g, topY, aPos.x, aPos.y);
     }
@@ -176,7 +176,9 @@ class QuestBox {
         fill(200);
         textAlign(CENTER);
         textFont(this.tFont);
+        textSize(floor(this.w/17));
+        text("메시지의 일부를 출력하고 있습니다", width/2, this.h/2);
         textSize(floor(this.w/10));
-        text("PRINTING...", width/2, this.h/2);
+        text("PRINTING...", width/2, this.h/3*2);
     }
 }
