@@ -83,8 +83,13 @@ function draw() {
 
     if (!isPrinting && printPool.length > 0) {
         let poolData = printPool.shift();
-        socket.emit('print', poolData);
-        console.log("PRINTING::"+poolData.fontSize+"::"+poolData.bits);
+
+        if (poolData.bits == 'feed') {
+            socket.emit('feed', {feedSize: poolData.fontSize});
+        } else {
+            socket.emit('print', poolData);
+            console.log("PRINTING::"+poolData.fontSize+"::"+poolData.bits);
+        }
     }
 
     if (printPool.length == 0 && cMessage.length == 0 && state != "LINE") {
@@ -232,7 +237,8 @@ function pushLine(aSize, bits) {
 }
 
 function printFeed(aSize) {
-    socket.emit('feed', {feedSize: aSize});
+    printPool.push(fontLine(aSize, 'feed'));
+    // socket.emit('feed', {feedSize: aSize});
 }
 
 
