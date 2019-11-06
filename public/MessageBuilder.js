@@ -28,6 +28,22 @@ class MessageBuilder {
             {type: 'char', value: '_', data: F.space},
             {type: 'end'}],
 
+            // CODE IS DATA
+            [{type: 'char', value: 'C', data: F.c},
+            {type: 'char', value: 'O', data: F.o},
+            {type: 'char', value: 'D', data: F.dk},
+            {type: 'char', value: 'E', data: F.e},
+            {type: 'char', value: '_', data: F.space},
+            {type: 'char', value: 'I', data: F.i},
+            {type: 'char', value: 'S', data: F.s},
+            {type: 'char', value: '_', data: F.space},
+            {type: 'char', value: 'D', data: F.d},
+            {type: 'char', value: 'A', data: F.a},
+            {type: 'line', value: 'T', data: F.t},
+            {type: 'line', value: 'A', data: F.a},
+            {type: 'char', value: '_', data: F.space},
+            {type: 'end'}],
+
             // WORLD IS FLAT
             [{type: 'char', value: 'W', data: F.w},
             {type: 'char', value: 'O', data: F.o},
@@ -74,6 +90,22 @@ class MessageBuilder {
             {type: 'char', value: 'A', data: F.a},
             {type: 'line', value: 'T', data: F.td},
             {type: 'char', value: 'A', data: F.a},
+            {type: 'char', value: '_', data: F.space},
+            {type: 'end'}],
+
+            // NOW AND HERE
+            [{type: 'char', value: 'N', data: F.n},
+            {type: 'char', value: 'O', data: F.o},
+            {type: 'line', value: 'W', data: F.w},
+            {type: 'char', value: '_', data: F.space},
+            {type: 'char', value: 'A', data: F.a},
+            {type: 'char', value: 'N', data: F.n},
+            {type: 'char', value: 'D', data: F.dspace},
+            {type: 'char', value: '_', data: F.space},
+            {type: 'char', value: 'H', data: F.h},
+            {type: 'char', value: 'E', data: F.e},
+            {type: 'char', value: 'R', data: F.r},
+            {type: 'line', value: 'E', data: F.e},
             {type: 'char', value: '_', data: F.space},
             {type: 'end'}],
         ];
